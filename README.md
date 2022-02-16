@@ -2,8 +2,6 @@
 Simple laravel project to evaluate laravel web developer candidates.<br>
 <br><br>
 Tasks:<br><br>
-    ☐ Clone git repository - https://github.com/mfhprantik/LaravelEvaluation.git<br>
-    ☐ Create a new branch.<br>
     ☐ Create a laravel project.<br>
     ☐ Use Laravel UI package to create an authentication system (Login, Registration) for admins.<br>
     ☐ Import DB sql provided in the 'SQL' folder<br>
