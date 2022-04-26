@@ -17,7 +17,7 @@ class CreateProductsTable extends Migration
             $table->id();
             $table->string('title');
             $table->text('description')->nullable();
-            $table->foreignId('subcategory_id')->constrained()->onDelete('cascade');
+            $table->string('subcategory_id');
             $table->float('price')->nullable();
             $table->text('thumbnail')->nullable();
             $table->timestamps();
