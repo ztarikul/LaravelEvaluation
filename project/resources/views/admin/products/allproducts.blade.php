@@ -5,7 +5,7 @@
 
 
     <!-- Blog Post -->
-    <form method="post" action="{{route('product.store')}}" enctype="multipart/form-data" id="create_product">
+    <form method="post" action="{{route('product.store')}}" enctype="multipart/form-data" id="create_product_frm">
         @csrf
 
         <div class="row">
@@ -16,7 +16,7 @@
                 </div>
                 <div class="form-group" style="color:black;">
                     <label for="title"><b>Description</b></label>
-                    <input type="text" class="form-control" style="width:70%" name="description" id="title" aria-describedby="" placeholder="max length 250">
+                    <textarea type="text" id="mytextarea" class="form-control" style="width:70%" name="description" id="title" aria-describedby=""> </textarea>
                 </div>
 
                 <div class="form-group" style="color:black;">
@@ -50,64 +50,40 @@
 
         </div>
     </form>
-    <div id="message"></div>
+
+    <div id="productlist">
+
+        @include('admin.products.productlist')
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script>
-        jQuery('#create_product').submit(function(e) {
+    <!-- <script>
+        $("#create_product_frm").submit(function(e) {
             e.preventDefault();
 
             jQuery.ajax({
                 url: "{{route('product.store')}}",
-                data: jQuery('#create_product').serialize(),
+                data: jQuery('#create_product_frm').serialize(),
                 type: 'post',
-                success: function(result) {
-                    jQuery('#message').html(result.msg);
+                success: function(post) {
+
+                    jQuery('#create_product_frm')[0].reset();
+                    jQuery('#productlist').html(post);
+
                 }
+
             });
+
+
         });
-    </script>
+    </script> -->
 
 
 
 
-    <table class="table table-blue table-striped">
-        <thead>
-            <tr>
-
-
-                <th scope="col">Title</th>
-                <th scope="col">Description</th>
-                <th scope="col">Sub Category</th>
-                <th scope="col">Price</th>
-                <th scope="col">Thumbnail</th>
-                <th scope="col">Delete</th>
-
-
-            </tr>
-        </thead>
-        <tbody>
-            @foreach( $products as $product)
-            <tr>
-                <!-- @method('DELETE') -->
-
-                <td>{{ $product->title }}</td>
-                <td>{{ $product->description}}</td>
-                <td>{{ $product->Subcategory->title}}</td>
-                <td>{{ $product->price}}</td>
-                <td><img class="zoom" width="50" height="50" src="{{ asset('storage/'.$product->thumbnail)}}" alt=""></td>
-                <form method="post" action="{{route('product.destroy',$product->id)}}">
-                    @csrf
-                    @method('DELETE')
-
-                    <td><input type="submit" class="btn btn-danger btn-sm" value="Delete"></td>
-
-                </form>
 
 
 
-            </tr>
-            @endforeach
-    </table>
+
     @endsection
 </x-admin-master>
