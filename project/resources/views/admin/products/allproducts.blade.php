@@ -16,7 +16,7 @@
                 </div>
                 <div class="form-group" style="color:black;">
                     <label for="title"><b>Description</b></label>
-                    <textarea type="text" id="mytextarea" class="form-control" style="width:70%" name="description" id="title" aria-describedby=""> </textarea>
+                    <textarea type="text" id="editor" class="form-control" style="width:70%" name="description" id="title" aria-describedby=""> </textarea>
                 </div>
 
                 <div class="form-group" style="color:black;">
