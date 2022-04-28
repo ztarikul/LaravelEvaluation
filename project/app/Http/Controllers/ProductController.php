@@ -43,7 +43,7 @@ class ProductController extends Controller
 
         // dd($request);
         $inputs['title'] = $request['title'];
-        $inputs['description'] = $request['title'];
+        $inputs['description'] = $request['description'];
         $inputs['price'] = $request['price'];
         $inputs['subcategory_id'] = $request['subcategory_id'];
         $inputs['thumbnail'] = request('thumbnail')->store('thumbnail');

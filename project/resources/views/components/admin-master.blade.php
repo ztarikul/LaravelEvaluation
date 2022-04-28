@@ -273,34 +273,27 @@
   <script src="{{asset('js/sb-admin-2.min.js')}}"></script>
   <script src="/js/jquery-3.6.0.min.js"></script>
   <script src="//cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
-  <!-- <script src="//cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script> -->
+
   <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
-  <!-- <script src="https://cdn.tiny.cloud/1/gl2mkdxn4aef3i379wja56wsofrgcnwneecr6qzs1pdtg3tl/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script> -->
+
   <script>
     $(document).ready(function() {
       $('.table').DataTable();
     });
   </script>
 
-  <!-- <script type="text/javascript">
-    $(document).ready(function() {
-      $('.ckeditor').ckeditor();
-    });
-  </script> -->
+
 
   <script>
     ClassicEditor
       .create(document.querySelector('#editor'))
+      .then(editor => {
+        console.log(editor);
+      })
       .catch(error => {
         console.error(error);
       });
   </script>
-
-  <!-- <script>
-    tinymce.init({
-      selector: '#mytextarea'
-    })
-  </script> -->
 
 </body>
 

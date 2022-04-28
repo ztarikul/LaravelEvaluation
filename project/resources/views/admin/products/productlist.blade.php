@@ -19,10 +19,7 @@
             <!-- @method('DELETE') -->
 
             <td>{{ $product->title }}</td>
-            <?php
-            $rep_description = str_replace('&', '&amp;', $product->description);
-            ?>
-            <td>{{ $rep_description}}</td>
+            <td>{!! $product->description !!}</td>
             <td>{{ $product->Subcategory->title}}</td>
             <td>{{ $product->price}}</td>
             <td><img class="zoom" width="50" height="50" src="{{ asset('storage/'.$product->thumbnail)}}" alt=""></td>
